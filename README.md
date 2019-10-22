@@ -1,6 +1,8 @@
 # TRSAnalytics
 TRS网脉移动统计SDK
 
+集成文档: https://miridescen.gitbooks.io/sdk-2-0/content/
+
 修改日志:
 
 v2.0.2  2019.06.18
