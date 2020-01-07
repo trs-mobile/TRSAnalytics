@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "TRSAnalytics"
-  s.version      = "2.0.3"
+  s.version      = "2.0.4"
   s.summary      = "TRS网脉移动统计SDK"
   s.description  = <<-DESC
                   TRS网脉移动统计SDK，用于移动端埋码数据搜集
@@ -12,8 +12,8 @@ Pod::Spec.new do |s|
   s.license      = { :type => "MIT", :file => "LICENSE" }
 
   s.requires_arc = true
-  s.platform     = :ios, "9.0"
-  s.ios.deployment_target = "9.0"
+  s.platform     = :ios, "8.0"
+  s.ios.deployment_target = "8.0"
   s.frameworks   = 'UIKit', 'Foundation','CoreTelephony'
 
   s.author       = { "wu.jianjun" => "wu.jianjun@trs.com.cn" }
