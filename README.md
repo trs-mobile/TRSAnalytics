@@ -1,7 +1,7 @@
 # TRSAnalytics
 TRS网脉移动统计SDK
 
-集成文档: https://miridescen.gitbooks.io/sdk-2-0/content/
+集成文档: https://www.yuque.com/trs-mobile/ta_ios
 
 修改日志:
 
