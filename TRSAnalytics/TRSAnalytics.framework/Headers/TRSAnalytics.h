@@ -7,7 +7,9 @@
 //  本文件提供了SDK的初始化方法及相关参数设置方法
 
 #import <Foundation/Foundation.h>
+
 NS_ASSUME_NONNULL_BEGIN
+
 @interface TRSAnalytics : NSObject
 
 #pragma mark -- 必须调用方法
@@ -115,8 +117,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)logout;
 
-
-
 @end
+
 NS_ASSUME_NONNULL_END
 
