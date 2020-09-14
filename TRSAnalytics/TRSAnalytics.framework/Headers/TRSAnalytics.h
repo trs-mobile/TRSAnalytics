@@ -55,6 +55,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)setLongitude:(nullable NSString *)longitude latitude:(nullable NSString *)latitude;
 
+/**
+  网脉设备码
+ */
++ (NSString *)uuid;
+
 #pragma mark -- 事件统计方法
 
 
