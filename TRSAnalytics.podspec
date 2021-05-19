@@ -12,8 +12,8 @@ Pod::Spec.new do |s|
   s.license      = { :type => "MIT", :file => "LICENSE" }
 
   s.requires_arc = true
-  s.platform     = :ios, "8.0"
-  s.ios.deployment_target = "8.0"
+  s.platform     = :ios, "9.0"
+  s.ios.deployment_target = "9.0"
   s.frameworks   = 'UIKit', 'Foundation','CoreTelephony'
 
   s.author       = { "wu.jianjun" => "wu.jianjun@trs.com.cn" }
