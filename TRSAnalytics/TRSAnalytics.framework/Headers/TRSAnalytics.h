@@ -12,18 +12,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TRSAnalytics : NSObject
 
-#pragma mark - 必须调用
 /**
- * SDK初始化方法 必须调用
- * @param appKey 分发的appKey
- * @param appID 分发的appID
- * @param staticURL 统计地址
+ * 初始化网脉组件产品
+ * @param appKey   开发者在网脉官网申请的appKey
+ * @param appID     开发者在网脉官网申请的appID
+ * @param staticURL     网脉统计地址
  * @param deviceID 设备ID
- * @param channel 渠道（不传则默认为“APP Store”）
+ * @param channel 渠道标识，可设置nil表示"App Store".
  * @param attributes 自定义信息   注* 旧设备标识信息以key/value的形式放到该参数中，key = oldDeviceID，如果key传错，将收集不到
                                   个像设备标识信息以key/value的形式放到该参数中，key = gxDeviceID，如果key传错，将收集不到
  */
-
 + (void)startWithAppKey:(NSString *)appKey
                   appID:(NSString *)appID
               staticURL:(NSString *)staticURL
@@ -31,18 +29,23 @@ NS_ASSUME_NONNULL_BEGIN
                 channel:(nullable NSString *)channel
              attributes:(nullable NSDictionary *)attributes;
 
-#pragma mark - 可选调用
-/**
- * 是否在控制台打印日志信息，默认不打印
- * @param logEnable YES = 打印，NO = 不打印
+/** 设置是否在console输出sdk的log信息.
+ @param logEnable 默认NO(不输出log); 设置为YES, 输出可供调试参考的log信息. 发布产品时必须设置为NO.
  */
 + (void)setLogEnable:(BOOL)logEnable;
 
 /**
- * 是否切换到debug模式，debug模式下数据会逐条发送，并可实时在网脉分析端查看，默认是非debug模式
- * @param debugEnable YES = 切换，NO = 不切换
+ * 设置是否切换到debug模式
+ * @param debugEnable  默认NO(非debug模式)；设置为YES在debug模式下数据会逐条发送，并可实时在网脉分析端查看
  */
 + (void)setDebugEnable:(BOOL)debugEnable;
+
+/** 
+ * 设置是否对传输数据内容进行加密, 默认NO(不加密).
+ * ⚠️⚠️⚠️ 烦请先与项目上确认网脉后端是否支持加密，否则可能引起上报数据不能正常解析。
+ @param encryptEnable 设置为YES,  SDK 会将数据内容做加密处理
+ */
++ (void)setEncryptEnable:(BOOL)encryptEnable;
 
 /**
  * 设置经纬度信息
@@ -75,7 +78,7 @@ NS_ASSUME_NONNULL_BEGIN
  * @param pageName 自定义页面名称
  * @param properties 其他页面相关信息 注* 相关字段见文档
  */
-+ (void)pageEnd:(NSString *)pageName properties:(nullable NSMutableDictionary *)properties;
++ (void)pageEnd:(NSString *)pageName properties:(nullable NSDictionary *)properties;
 
 /**
  * 事件方法
@@ -88,21 +91,21 @@ NS_ASSUME_NONNULL_BEGIN
  * @param eventCode 事件编号
  * @param properties 事件其他相关信息 注* 相关字段见文档
  */
-+ (void)event:(NSString *)eventCode properties:(nullable NSMutableDictionary *)properties;
++ (void)event:(NSString *)eventCode properties:(nullable NSDictionary *)properties;
 
 #pragma mark - 用户相关
 
 /**
  * 登录方法
- * @param userInfo 用户信息  注目前用户模块只支持用户名（se_un）和用户ID（uid）两个字段
+ * @param info 用户信息  注目前用户模块只支持用户名（se_un）和用户ID（uid）两个字段
  */
-+ (void)login:(NSMutableDictionary *)userInfo;
++ (void)login:(NSDictionary *)info;
 
 /**
  * 修改用户信息
- * @param userInfo 用户信息  注目前用户模块只支持用户名（se_un）和用户ID（uid）两个字段
+ * @param info 用户信息  注目前用户模块只支持用户名（se_un）和用户ID（uid）两个字段
  */
-+ (void)modifyUserInfo:(NSMutableDictionary *)userInfo;
++ (void)modifyUserInfo:(NSDictionary *)info;
 
 /**
  * 退出方法
