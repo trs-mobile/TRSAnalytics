@@ -29,6 +29,12 @@ NS_ASSUME_NONNULL_BEGIN
                 channel:(nullable NSString *)channel
              attributes:(nullable NSDictionary *)attributes;
 
+/**
+ * 仅用于在Flutter项目中SDK初始化晚了未响应应用生命周期通知，手动开启运行上报
+ * 默认不需要额外调用本代码
+ */
+- (void)fluuterDoAnalytics;
+
 /** 设置是否在console输出sdk的log信息.
  @param logEnable 默认NO(不输出log); 设置为YES, 输出可供调试参考的log信息. 发布产品时必须设置为NO.
  */
