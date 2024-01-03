@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
     s.name         = 'TRSAnalytics'
-    s.version      = '2.1.2'
+    s.version      = '2.1.3'
     s.summary      = 'TRS网脉移动统计SDK'
     s.description  = <<-DESC
                   TRS网脉移动统计SDK，用于移动端埋码数据搜集
