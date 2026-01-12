@@ -1,6 +1,6 @@
 framework module TRSAnalytics {
   umbrella header "TRSAnalytics.h"
-
   export *
+
   module * { export * }
 }
